@@ -59,4 +59,6 @@ app.get('/events', async function(req, res) {
 
 const server = spdy.createServer(options, app)
 
-server.listen(3005, () => console.log(`sever is listning on https://localhost:3005`))
+const port = process.env.PORT || 8443
+
+server.listen(port, () => console.log(`sever is listning on https://localhost:${port}`))
